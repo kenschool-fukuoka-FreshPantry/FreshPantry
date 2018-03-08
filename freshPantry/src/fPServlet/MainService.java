@@ -14,7 +14,7 @@ import fPBean.FoodBean;
 /**
  * Servlet implementation class MainService
  */
-@WebServlet("/fPServlet/MainService")
+@WebServlet("/MainService")
 public class MainService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	/* 遷移 */
