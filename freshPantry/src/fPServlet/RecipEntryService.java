@@ -48,20 +48,34 @@ public class RecipEntryService extends HttpServlet {
 		//入力された情報を取得
 		String reqRecip_Name = request.getParameter("recip_name");
 
-			for(int i = 0; i <= .length; i++){
-				String reqFood_Name[i] = request.getParameter("food_name[i]");
-				int reqQuantity[i] = Integer.parseInt(request.getParameter("quantity[i]"));
-				int reqUnit[i] = Integer.parseInt(request.getParameter("unit[i]"));
+		int i = 1;
+		boolean endFlg = false;
+		while(!endFlg){
+			String x = request.getParameter("food_name"+ i);
+			String y = request.getParameter("quantity" + i);
+			String z = request.getParameter("unit" + i);
+
+			//RecipBean rb = x + y + z;
+
+			if(x == null){	// 枠がなくなったら、処理をやめる
+				endFlg = true;
+				break;
 			}
-			
-		
+			i++;
+
+		}
+
+
+	}
+
+/*
 
 		RequestDispatcher rd = null;
 		String url = "";
 
-		String subMenuId = request.getParameter("sub_menu_id");
+		String UpDateMenuId = request.getParameter("update_menu_id");
 		try {
-			switch (subMenuId){
+			switch (UpDateMenuId){
 
 			case TO_BACK:
 				// 食材入力へ
@@ -77,7 +91,7 @@ public class RecipEntryService extends HttpServlet {
 				url = "/Main.jsp";
 				break;
 			}
-
+*/
 			// 最後にフォワード
 			rd = request.getRequestDispatcher(url);
 			rd.forward(request, response);
