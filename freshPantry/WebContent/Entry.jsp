@@ -12,6 +12,7 @@
 
 
 <%-- 今の戻るボタンではMain.jspに戻れないかも・・・ --%>
+<%-- 戻るボタンの位置をもう少し左にする --%>
 
 
 
@@ -19,20 +20,26 @@
 <h1><font color="green">新規登録・変更・削除</font></h1>
 <br/>
 <form action="EntryEditMenuService" method="post">
-	<input type="hidden" name="sub_menu_id" value="001" />
-	<input type="submit" value="食材入力" />
-	<br/><br/><br/>
-	<input type="hidden" name="sub_menu_id" value="002" />
-	<input type="submit" value="レシピ入力" />
-	<br/><br/><br/>
-	<input type="hidden" name="sub_menu_id" value="003" />
-	<input type="submit" value="登録内容変更・削除" />
-	<br/><br/><br/><br/>
+  <table width="100" height="200" border="0">
+  <tr>
+	<td><input type="hidden" name="sub_menu_id" value="001" />
+	<input type="submit" value="食材入力" /></td>
+  </tr>
+  <tr>
+	<td><input type="hidden" name="sub_menu_id" value="002" />
+	<input type="submit" value="レシピ入力" /></td>
+  </tr>
+	<tr>
+	<td><input type="hidden" name="sub_menu_id" value="003" />
+	<input type="submit" value="登録内容変更・削除" /></td>
+  </tr>
 
+</table>
 </form>
 
+<br/>
 <p><input type="button" value="戻る" onClick="history.back()" /></p>
-<a href="Main.jsp">戻る</a>
+
 </center>
 </body>
 </html>

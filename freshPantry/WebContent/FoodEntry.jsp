@@ -23,9 +23,7 @@
 		if(!obj.expiration_date.value.match(/^[0-9]+$/g)){
 			msg += "残量は必須項目です。"
 		}
-		if(obj.ｃategory_id.selectedIndex == 0){
-			msg += "カテゴリーは必須項目です。"
-		}
+
 }
 </script>
 
@@ -39,15 +37,19 @@
 <%-- 必須項目の入力チェックとポップアップの表示未設定 --%>
 
 
+
+<div align="center">
 <h1><font color="orange">食材入力</font></h1>
 <br/>
 	<form action="FoodEntryService" method="post" onSubmit="return dataCheck(this);">
-	<p>・食材名<font color="red">（必須）</font>
-		<input type="text" name="food_name" size="25" />
-	</p>
- 	<br/>
- 	<p>・残量（半角数字）<font color="red">（必須）</font>
- 		<input type="text" name="quantity" size="5" />
+	<table border="0">
+	<tr>
+	<th align="left">・食材名<font color="red">（必須）</font></th>
+		<td><input type="text" name="food_name" size="25" /></td>
+		</tr>
+	<tr>
+	<th align="left">・残量（半角数字）<font color="red">（必須）</font></th>
+ 		<td><input type="text" name="quantity" size="5" />
  			<select name="unit">
         	 <option value="">単位</opution>	<%-- value=""bean見て入力する --%>
         	 <option value="">ｇ</option>
@@ -61,19 +63,19 @@
          	 <option value="">枚</option>
          	 <option value="">杯</option>
 
-       		 </select>
- 	</p>
- 	<br/>
- 	<p>・購入日（半角数字）
- 		<input type="text" name="purchase_date" size="25" />
- 	</p>
- 	<br/>
- 	<p>・賞味期限（半角数字）<font color="red">（必須）</font>
- 		<input type="text" name="expiration_date" size="25" />
- 	</p>
- 	<br/>
- 	<p>・カテゴリー<font color="red">（必須）</font>
- 	<select name="ｃategory_id">
+       		 </select></td>
+ 	</tr>
+ 	<tr>
+ 	<th align="left">・購入日（半角数字）</th>
+ 		<td><input type="text" name="purchase_date" size="25" /></td>
+ 	</tr>
+ 	<tr>
+ 	<th align="left">・賞味期限（半角数字）<font color="red">（必須）</font></th>
+ 		<td><input type="text" name="expiration_date" size="25" /></td>
+ 	</tr>
+ 	<tr>
+ 	<th align="left">・カテゴリー<font color="red">（必須）</font></th>
+ 		<td><select name="ｃategory_id">
          <option value="">選択してください</opution>
          <option value="">肉類</option>					<%-- value=""bean見て入力する --%>
          <option value="">魚介類</option>
@@ -82,18 +84,19 @@
          <option value="">加工品</option>
          <option value="">飲料</option>
          <option value="">その他</option>
-        </select>
- 	</p>
- 	<br/>
- 	<p>・栄養素</p>
- 	<input type="submit" value="栄養素追加" />
- 	<input type="reset" value="クリア" />
- 	<br/><br/><br/><br/>
-
+        </select></td>
+ 	</tr>
+ 	<tr>
+ 	<th align="left">・栄養素</th>
+ 	<td><input type="submit" value="栄養素追加" />
+ 	<input type="reset" value="クリア" /></td>
+ 	</tr>
+</table>
  </form>
 
-	<input type="button" value="戻る" onClick="history.back()" />
-	<input type="submit"  value="次へ" />
-
+	<p><input type="button" value="戻る" onClick="history.back()" />
+	<input type="submit"  value="次へ" /></p>
+	<br/>
+</div>
 </body>
 </html>
