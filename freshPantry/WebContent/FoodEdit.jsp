@@ -16,40 +16,57 @@
             "background-position:bottom;">
 
 	<div align="center">
-	<td  style="padding: 10px 5px 10px 5px;
-	border-bottom: 2px #c0c0c0 dashed; background-color:#E0FFFF;">
 
 	<h1><font color="blue">食材変更</h1>
 
-	<form id=" " name=" " action="EditMenuService" method="post">
-
-	<table style="width:750px;" border="0">
+	<table style="width:750px;" border="1" cellspacing="10">
 	 <tr>
-	   <th>食材名</th> <td><input type="text" name="name" size="20"></td>
+	   <td>食材名</td>
+	   <td><input type="text" name="food_name" /></td>
 	 </tr>
 	 <tr>
-	   <th>残量</th> <td><input type="text" name="name" size="20"></td>
+	   <td>残量(半角数字) <font color="red">（必須）</font></td>
+	   <td><input type="text" name="quantity" size="5" /></td>
+	   <td><select name="unit">
+        	 <option value="0">単位</option>
+        	 <option value="1">ｇ</option>
+        	 <option value="2">個</option>
+         	 <option value="3">本</option>
+         	 <option value="4">匹</option>
+        	 <option value="5">ｍｌ</option>
+         	 <option value="6">丁</option>
+         	 <option value="7">尾</option>
+         	 <option value="8">束</option>
+         	 <option value="9">枚</option>
+         	 <option value="10">杯</option>
+		</td>
+       	   </select>
 	 </tr>
 	 <tr>
-	   <th>購入日</th> <td><input type="text" name="name" size="20"></td>
+	   <td>購入日 (半角数字)</td>
+	    <td><input type="text" name="purchase_date" size="25" /></td>
 	  </tr>
 	  <tr>
-	    <th>賞味期限</th> <td><input type="text" name="name" size="20"></td>
+	    <td>賞味期限 (半角数字) <font color="red">（必須）</font></td>
+	    <td><input type="text" name="expiration_date" size="25" /></td>
 	  </tr>
-	    <th>カテゴリー</th>
-	    <td><select name="category">
-	   		<option value="0">選択してください</option>
-
-
-
-
-
+	    <td>カテゴリー <font color="red">（必須）</font></td>
+	    <td><select name="category_id">
+	   		<option value="0">選択してください</option>			<%-- 消えるかも。必須項目の為 --%>
+			<option value="1">肉類</option>
+         	<option value="2">魚介類</option>
+         	<option value="3">野菜類</option>
+         	<option value="4">乳製品・卵</option>
+         	<option value="5">加工品</option>
+         	<option value="6">飲料</option>
+         	<option value="7">その他</option>
+        </select>
 
 		</td>
 
 	  </table>
 	  </br>
-	<input type="submit" value="次へ"></div>
+	<input type="submit" value="次へ" /></div>
 	</form>
 
 	<button><a href="Main.jsp">戻る</button>
