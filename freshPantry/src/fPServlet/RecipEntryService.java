@@ -42,20 +42,19 @@ public class RecipEntryService extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8");
-		
-		
+
+
 
 		//入力された情報を取得
 		String reqRecip_Name = request.getParameter("recip_name");
+
+			for(int i = 0; i <= .length; i++){
+				String reqFood_Name[i] = request.getParameter("food_name[i]");
+				int reqQuantity[i] = Integer.parseInt(request.getParameter("quantity[i]"));
+				int reqUnit[i] = Integer.parseInt(request.getParameter("unit[i]"));
+			}
+			
 		
-		
-		
-		String reqFood_Name1 = request.getParameter("food_name1");
-		int reqQuantity1 = Integer.parseInt(request.getParameter("quantity1"));
-		int reqUnit1 = Integer.parseInt(request.getParameter("unit1"));
-		String reqFood_Name2 = request.getParameter("food_name2");
-		int reqQuantity2 = Integer.parseInt(request.getParameter("quantity2"));
-		int reqUnit2 = Integer.parseInt(request.getParameter("unit2"));
 
 		RequestDispatcher rd = null;
 		String url = "";
