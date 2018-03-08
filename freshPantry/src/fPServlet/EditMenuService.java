@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class EditMenuService
  */
-@WebServlet("/fPServlet/EditMenuService")
+@WebServlet("/EditMenuService")
 public class EditMenuService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	// 遷移
