@@ -15,6 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/fPServlet/EditMenuService")
 public class EditMenuService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	// 遷移
+	static final String TO_FOOD_SELECT = "001";
+	static final String TO_RECIP_SELECT = "002";
+	static final String TO_NUTRIENT_SELECT = "003";
 
     /**
      * @see HttpServlet#HttpServlet()
