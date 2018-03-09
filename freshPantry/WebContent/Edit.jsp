@@ -1,3 +1,8 @@
+<!--
+	@author 藤本
+	登録内容変更・削除画面
+	@version 1.0
+ -->
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -9,31 +14,35 @@
 <title>	登録内容変更・削除</title>
 
 
-<td  style="padding: 10px 5px 10px 5px>
 
 </head>
 
-<body style="background-image:  ;
-            "background-position:bottom;">
+<body>
+
 	<div align="center">
+
 	<h1><font color="blue">登録内容変更・削除</h1>
 	<form id=" " name=" " action="EditMenuService" method="post">
-	<table style="width:750px;" border="1">
+	<table style="width:750px;" border="0"  cellspacing="20">		<%--スマートフォンのサイズ=750px --%>
 
 	 <tr>
-	  <th><a href="FoodSelect.jsp">食材変更・削除</th>
+	 <hr/>
+	  <th><a href="FoodSelect.jsp">食材変更・削除</th>				<%-- 水谷さん式に変更するかも --%>
 	 </tr>
 	 <tr>
-	 <th><a href="RecipSelect.jsp">レシピ変更・削除</th>
+	 <th><a href="RecipSelect.jsp">レシピ変更・削除</th>			<%-- 上に同じ --%>
 	 </tr>
 	  <tr>
-	   <th><a href="NutrientSelect.jsp">栄養素変更・削除</th>
+	   <th><a href="NutrientSelect.jsp">栄養素変更・削除</th>			<%-- 上に同じ --%>
 	  </tr>
 	  </table>
 	  </br>
 
 	</form>
 	 </div>
-	<button><a href="Main.jsp">戻る</button>
+	 <hr/>
+	 <br/>
+	<input type="button" onClick="location.href='Main.jsp'" value="戻る">
+
 </body>
 </html>

@@ -1,3 +1,8 @@
+<!--
+	@author 藤本
+	食材選択画面
+	@version 1.0
+ -->
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -5,7 +10,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.Iterator"%>
-<%@page import="fpBean.FoodBean"%>
+<%@page import="fPBean.FoodBean"%>
 
 <%
 	List<FoodBean> foodList = (List<FoodBean>)request.getAttribute("foodList");
@@ -37,7 +42,7 @@ function checkForm2(){
 		<h2>食材選択</h2>
 
 		<form action="FoodDeleteService" method="post">
-		<table style="width:750px" border="1">
+		<table style="width:750px" border="1">			<%--スマートフォンのサイズ=750px --%>
 <%
 	if (foodList != null) {
 		for(int i=0; i< foodList.size(); i++){
@@ -45,7 +50,7 @@ function checkForm2(){
  %>
 
 		<tr>
-			<td><input type="radio" name="food" value="<%= foodBean.getfoodNo() %>">
+			<td><input type="radio" name="food" value="<%=foodBean.getFoodName() %>">
 			</input>
 			</td>
 		</tr>
@@ -55,12 +60,17 @@ function checkForm2(){
 		}
  %>
  		<input type="submit" name="input-submit" value="次へ"
- 		onclick="return checkForm();">
- 		</input>
+ 		onclick="return checkForm();" />
+
  		<input type="reset" name="input-reset" value="削除"
- 		onclick="return checkForm()" onclick="return checkForm2();">    // もしくは、onclick="return confirm('削除しますか？');">
+ 		onclick="return checkForm()" onclick="return checkForm2();" />
+
+ 	<%--  もしくは、onclick="return confirm('削除しますか？');">  --%>
+
  		</input>
 		</table>
 		</form>
+
+		<input type="button" value="戻る" onclick="history.back()" />
 </body>
 </html>
