@@ -106,28 +106,28 @@ public class FoodBean {
 
 
 	/** ここから先は今から作成する予定 **/
-	public void addFoodData() {
+	public static void addFoodData() {
 
 	}
-	public void getFoodData() {
+	public static void getFoodData() {
 
 	}
-	public void getFoodList() {
+	public static void getFoodList() {
 
 	}
-	public void updateFoodData() {
+	public static void updateFoodData() {
 
 	}
-	public void deleteFoodData() {
+	public static void deleteFoodData() {
 
 	}
-	public void deleteFoodList() {
+	public static void deleteFoodList() {
 
 	}
-	public void getNutrientData() {
+	public static void getNutrientData() {
 
 	}
-	public void updateNutrientData() {
+	public static void updateNutrientData() {
 
 	}
 

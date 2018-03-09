@@ -12,7 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 import fPBean.FoodBean;
 
 /**
- * Servlet implementation class MainService
+ * @author aka
+ * @version 1.0
+ *
+ * メニュー画面を表示し、画面遷移をコントロールする。
+ *
  */
 @WebServlet("/MainService")
 public class MainService extends HttpServlet {

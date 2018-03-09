@@ -10,7 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class EditMenuService
+ * @author aka
+ * @version 1.0
+ *
+ * 新規登録・変更画面を表示し、画面遷移をコントロールする
+ *
  */
 @WebServlet("/EditMenuService")
 public class EditMenuService extends HttpServlet {
