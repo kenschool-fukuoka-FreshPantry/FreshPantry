@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fPBean.FoodBean;
+
 /**
  * Servlet implementation class TestButton
  */
@@ -44,6 +46,7 @@ public class TestButton extends HttpServlet {
 		RequestDispatcher rd = null;
 		String url = "";
 
+
 		if(buttonOnValue.equals("1")){
 			request.setAttribute("result", buttonOnValue);
 			// 1だったら、削除をよんで、元画面に戻る
@@ -52,6 +55,18 @@ public class TestButton extends HttpServlet {
 			url = "buttonIn.jsp";
 
 		}else{
+			// 単品ずついれる場合
+			request.setAttribute("no", request.getParameter("no"));
+			request.setAttribute("food_name", request.getParameter("food_name"));
+
+
+			// Bean使う場合
+			FoodBean fb = new FoodBean();
+			fb.setFoodNo(Integer.parseInt(request.getParameter("no")));
+			fb.setFoodName(request.getParameter("food_name"));
+			request.setAttribute("foodB", fb);
+
+			// ボタン判定用を渡す
 			request.setAttribute("result", buttonOnValue);
 			// 2だったら、次画面をよぶ
 

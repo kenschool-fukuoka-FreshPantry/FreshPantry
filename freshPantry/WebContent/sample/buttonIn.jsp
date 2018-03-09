@@ -33,6 +33,12 @@ if (delMessage == null){
 
 
 <form action="TestButton" method="post">
+<input type="hidden" name="no" value ="100"></input>
+</br>
+食材名<input type="text" name="food_name" size="25" />
+</br>
+
+
 ボタン削除？を押すと、値1が渡って削除ボタンおしました。になる。
 <br />
 <button type=submit name ="buttonOn" value ="1">
