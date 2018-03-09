@@ -34,10 +34,10 @@ public class FoodBean {
 	public String getUnitName() {
 		return unit_name;
 	}
-	public String getExpirationDate() {
+	public String getPurchaseDate() {
 		return purchase_date;
 	}
-	public String getPurchaseDate() {
+	public String getExpirationDate() {
 		return expiration_date;
 	}
 	public String getCategoryId() {
@@ -77,10 +77,10 @@ public class FoodBean {
 	public void setUnitName(String unit_name) {
 		this.unit_name = unit_name;
 	}
-	public void setExpirationDate(String purchase_date) {
+	public void setPurchaseDate(String purchase_date) {
 		this.purchase_date = purchase_date;
 	}
-	public void setPurchaseDate(String expiration_date) {
+	public void setExpirationDate(String expiration_date) {
 		this.expiration_date = expiration_date;
 	}
 	public void setCategoryId(String category_id) {
