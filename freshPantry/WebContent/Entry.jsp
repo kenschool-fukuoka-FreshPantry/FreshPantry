@@ -29,7 +29,7 @@
   <br/><br/><br/>
   <input type="hidden" name="sub_menu_id" value="003" />
 	<input type="submit" value="登録内容変更・削除" />
-  <br></br><br/>
+  <br/><br/>
 </form>
 
 <br/>
