@@ -10,8 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author aka
+ * @author 森川
  * @version 1.0
+ *
  *
  * 新規登録・変更画面を表示し、画面遷移をコントロールする
  *

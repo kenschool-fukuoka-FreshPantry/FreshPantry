@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import fPBean.FoodBean;
 
 /**
+ * @author 森川
+ * @version 1.0
+ *
  * Servlet implementation class FoodDeleteService
  */
 @WebServlet("/FoodDeleteService")
@@ -36,7 +39,12 @@ public class FoodDeleteService extends HttpServlet {
 
 		//jspのラジオボタンで選択された項目を取得
 		request.setCharacterEncoding("UTF-8");
-		int food_no = Integer.parseInt(request.getParameter("食材リスト"));
+		// int food_no = Integer.parseInt(request.getParameter("食材リスト"));
+		int food_no = 0;
+		if (request.getParameter("食材リスト") != null){
+			food_no = Integer.parseInt(request.getParameter("食材リスト"));
+
+		}
 
 		//Beanへ格納
 		FoodBean fb = new FoodBean();
@@ -49,14 +57,14 @@ public class FoodDeleteService extends HttpServlet {
 		RequestDispatcher rd = null;
 		String url = "";
 
-			if(buttonOnValue.equals("1")){
+			if("1".equals(buttonOnValue)){
 				request.setAttribute("result", buttonOnValue);
 				// 1だったら、削除をよんで、元画面に戻る
 				request.setAttribute("message", "削除ボタンおしました。");
 
 				url = "FoodSelect.jsp";
 
-			}else if(buttonOnValue.equals("2")){
+			}else if("2".equals(buttonOnValue)){
 				request.setAttribute("result", buttonOnValue);
 				// 2だったら、次画面をよぶ
 
