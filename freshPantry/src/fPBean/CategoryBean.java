@@ -11,6 +11,7 @@ import javax.sql.DataSource;
 
 /**
  * @author 中山佳代子
+ * @version 1.0
  *
  */
 public class CategoryBean {
