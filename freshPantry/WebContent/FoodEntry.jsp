@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+<%@ page import="fPBean.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -84,18 +86,18 @@ function input(){
 	<th align="left">・残量（半角数字）<font color="red">（必須）</font></th>
  		<td><input type="text" name="quantity" size="5" />
  			<select name="unit">
-        	 <option value="">単位</opution>	<%-- value=""bean見て入力する --%>
-        	 <option value="">ｇ</option>
-        	 <option value="">個</option>
-         	 <option value="">本</option>
-         	 <option value="">匹</option>
-        	 <option value="">ｍｌ</option>
-         	 <option value="">丁</option>
-         	 <option value="">尾</option>
-         	 <option value="">束</option>
-         	 <option value="">枚</option>
-         	 <option value="">杯</option>
+        	 <option value="">単位</opution>
+<%
+	ArrayList<UnitBean> ul = UnitBean.getUnitIdList();
 
+	for(int i = 0; i <ul.size() ;i++){
+		UnitBean u = ul.get(i);
+%>	<option value="">単位</opution> 
+	}
+<%{
+	
+} %>
+<option value="">単位</opution>
        		 </select></td>
  	</tr>
  	<tr>
@@ -109,14 +111,16 @@ function input(){
  	<tr>
  	<th align="left">・カテゴリー<font color="red">（必須）</font></th>
  		<td><select name="ｃategory_id">
-         <option value="">選択してください</opution>
-         <option value="">肉類</option>					<%-- value=""bean見て入力する --%>
-         <option value="">魚介類</option>
-         <option value="">野菜類</option>
-         <option value="">乳製品・卵</option>
-         <option value="">加工品</option>
-         <option value="">飲料</option>
-         <option value="">その他</option>
+
+ 		<option value="">選択してください</opution>
+<%
+	ArrayList<CategoryBean> cl = CategoryBean.getCategoryIdList();
+
+	for(int i = 0; i <cl.size() ;i++){
+		CategoryBean c = cl.get(i);
+	}
+%>
+
         </select></td>
  	</tr>
  	<tr>
