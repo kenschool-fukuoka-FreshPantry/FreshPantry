@@ -84,6 +84,8 @@ public class FoodEditConfirmService extends HttpServlet {
 					break;
 				}
 
+				request.setAttribute("foodList", fb);
+
 				// 最後にフォワード
 				rd = request.getRequestDispatcher(url);
 				rd.forward(request, response);

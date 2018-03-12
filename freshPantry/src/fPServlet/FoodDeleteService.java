@@ -60,7 +60,6 @@ public class FoodDeleteService extends HttpServlet {
 			if("1".equals(buttonOnValue)){
 				request.setAttribute("result", buttonOnValue);
 				// 1だったら、削除をよんで、元画面に戻る
-				request.setAttribute("message", "削除ボタンおしました。");
 
 				url = "FoodSelect.jsp";
 

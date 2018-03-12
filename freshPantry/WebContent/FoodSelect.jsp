@@ -2,6 +2,7 @@
 	@author 藤本
 	食材選択画面
 	@version 1.0
+	森川
  -->
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -58,12 +59,18 @@ function checkForm2(){
 <%
 			}
 		}
- %>
- 		<input type="submit" name="input-submit" value="次へ"
- 		onclick="return checkForm();" />
 
- 		<input type="reset" name="input-reset" value="削除"
- 		onclick="return checkForm()" onclick="return checkForm2();" />
+
+ %>
+ 		<form action= "/FoodDeleteService.java" method="get">
+ 		<input type="hidden" value="002" />
+		<input type="submit" name="input-submit" value="次へ" onclick="return checkForm();" />
+		</form>
+
+		<form action= "/FoodDeleteService.java" method="get">
+		<input type="hidden" value="001" />
+ 		<input type="reset" name="input-reset" value="削除" onclick="return checkForm()" onclick="return checkForm2();" />
+ 		</form>
 
  	<%--  もしくは、onclick="return confirm('削除しますか？');">  --%>
 
