@@ -116,7 +116,6 @@ int cnt = 1;
 		<div id="input">
 		</div>
 		<input type="button" value="栄養素追加" onClick="input()">
-		<input type="submit" value="表示" />
 		<input type="reset" value="クリア" /></td>
 	</form>
  	</tr>
