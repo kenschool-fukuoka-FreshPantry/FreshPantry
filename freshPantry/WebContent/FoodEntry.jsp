@@ -138,8 +138,9 @@ int cnt = 1;
 </table>
  </form>
 </br></br>
-	<p><input type="button" value="戻る" onClick="history.back()" />
-	<input type="submit"  value="次へ" /></p>
+	<p><input type="button" onClick="location.href='Entry.jsp'" value="戻る" />
+	   <input type="button" onClick="location.href='FoodConfirm.jsp'" value="次へ" /></p>
+
 	<br/>
 </div>
 </body>

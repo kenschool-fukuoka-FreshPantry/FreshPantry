@@ -41,6 +41,9 @@
      <tr>
        <th>・栄養素</th><td><%=fBean.getNutrient()%></td>
      </tr>
+     </br></br>
+	<p><input type="button" onClick="location.href='FoodEntry.jsp'" value="戻る" />
+	<input type="button" onClick="location.href='Entry.jsp'" value="キャンセル" />
 </table>
 </div>
 </body>

@@ -8,15 +8,7 @@
 <title>新規登録・変更・削除</title>
 </head>
 <body>
-
-
-
-<%-- 戻るボタンでの戻り方 --%>
-<%-- 戻るボタンの位置をもう少し左にしたい --%>
-
-
-
-<center>
+<div align="center">
 <h1><font color="green">新規登録・変更・削除</font></h1>
 <br/>
 <form action="EntryEditMenuService" method="post">
@@ -33,8 +25,8 @@
 </form>
 
 <br/>
-<p><input type="button" value="戻る" onClick="history.back()" /></p>
+<p><input type="button" onClick="location.href='Main.jsp'" value="戻る" /></p>
+</div>
 
-</center>
 </body>
 </html>
