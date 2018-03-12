@@ -93,7 +93,7 @@ function input(){
 	for(int i = 0; i <ul.size() ;i++){
 		UnitBean u = ul.get(i);
 
-%>	<option value="">単位</opution>
+%>	<option value="<%=u.getUnit%>">単位</opution>
 
 <%
 
