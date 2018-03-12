@@ -43,17 +43,37 @@ function input(){
 	document.getElementById("p").appendChild(br);
 }
 </script>
+<script type="text/javascript">
+<!--
+	function dataCheck(obj){
+		var msg = "";
+		if(obj.food_name.value.length < 1){
+			msg += "食材名は必須項目です。\n";
+		}
+		if(!obj.quantity.value.num(/^[0-9]+$/g)){
+			msg += "残量は必須項目です。\n"
+		}
+		if(obj.select.unit == 0){
+			msg += "残量は必須項目です。¥n";
+		}
+		if(!obj.expiration_date.value.quantity(/^[0-9]+$/g)){
+			msg += "賞味期限は必須項目です。\n";
+		}
+		if(obj.select.ｃategory_id == 0){
+			msg += "カテゴリーは必須項目です。¥n";
+		}
+
+		if(msg.length > 0){
+			alert(msg);
+			return false;
+		}else{
+			return true;
+		}
+}
+//-->
+</script>
 </head>
 <body>
-
-
-<%-- サーブレットとつなげられているか --%>
-<%-- 栄養素の入力欄の表示方法探し中--%>
-<%-- 戻る、次へボタンで画面遷移するか --%>
-<%-- 必須項目の入力チェックとポップアップの表示未設定 --%>
-
-
-
 <div align="center">
 <h1><font color="orange">食材入力</font></h1>
 <br/>
@@ -64,7 +84,7 @@ function input(){
 		<td><input type="text" name="food_name" size="25" /></td>
 		</tr>
 	<tr>
-	<th align="left">・残量<font color="red">（必須）</font></th>
+	<th align="left">・残量（半角数字）<font color="red">（必須）</font></th>
  		<td><input type="text" name="quantity" size="5" />
  			<select name="unit">
         	 <option value="">単位</opution>	<%-- value=""bean見て入力する --%>
@@ -82,11 +102,11 @@ function input(){
        		 </select></td>
  	</tr>
  	<tr>
- 	<th align="left">・購入日</th>
+ 	<th align="left">・購入日（半角数字）</th>
  		<td><input type="text" name="purchase_date" size="25" /></td>
  	</tr>
  	<tr>
- 	<th align="left">・賞味期限<font color="red">（必須）</font></th>
+ 	<th align="left">・賞味期限（半角数字）<font color="red">（必須）</font></th>
  		<td><input type="text" name="expiration_date" size="25" /></td>
  	</tr>
  	<tr>
