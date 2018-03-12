@@ -1,4 +1,4 @@
-INSERT INTO unit(unit, unit_name) VALUES('001', 'グラム');
+INSERT INTO unit(unit, unit_name) VALUES('001', 'ｋｇ');
 INSERT INTO unit(unit, unit_name) VALUES('002', 'ｍｌ');
 INSERT INTO unit(unit, unit_name) VALUES('003', '個');
 INSERT INTO unit(unit, unit_name) VALUES('004', '本');
