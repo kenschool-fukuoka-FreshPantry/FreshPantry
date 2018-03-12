@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import fPBean.FoodNutrientBean;
-
 /**
  * @author 中山佳代子
  * @version 1.0
@@ -203,7 +201,7 @@ public class FoodBean {
 
 	}
 
-	public FoodBean getFoodData(int foodNo) {
+	public static FoodBean getFoodData(int foodNo) {
 		FoodBean resultFoodBean = new FoodBean();
 		ArrayList<FoodNutrientBean> fnBeenList = new ArrayList<FoodNutrientBean>();
 
@@ -235,7 +233,7 @@ public class FoodBean {
 						+ " FROM FOODMANAGE fm "
 						+ "INNER JOIN UNIT un USEING(unit) "
 						+ "INNER JOIN CATEGORY ca USEING(category_id) "
-						+ "INNER JOIN FOOD fo USEING(food_no) "
+						+ "LEFT OUTER JOIN FOOD fo USEING(food_no) "
 						+ " WHERE fm.food_no = " + foodNo + ";"
 						;
 				rs = st.executeQuery(sql);
@@ -277,7 +275,7 @@ public class FoodBean {
 		return resultFoodBean;
 	}
 
-	public ArrayList<FoodBean> getFoodList(String categryId) {
+	public static ArrayList<FoodBean> getFoodList(String categryId) {
 
 		ArrayList<FoodBean> resultFoodBeanlist = new ArrayList<FoodBean>();
 		Connection con = null;
@@ -368,19 +366,19 @@ public class FoodBean {
 		return resultFoodBeanlist;
 
 	}
-	public void updateFoodData() {
+	public static void updateFoodData() {
 
 	}
-	public void deleteFoodData() {
+	public static void deleteFoodData() {
 
 	}
-	public void deleteFoodList() {
+	public static void deleteFoodList() {
 
 	}
-	public void getNutrientData() {
+	public static void getNutrientData() {
 
 	}
-	public void updateNutrientData() {
+	public static void updateNutrientData() {
 
 	}
 
