@@ -1,4 +1,4 @@
-INSERT INTO fp_unit(unit, unit_name) VALUES('001', 'グラム');
+INSERT INTO fp_unit(unit, unit_name) VALUES('001', 'ｇ');
 INSERT INTO fp_unit(unit, unit_name) VALUES('002', 'ｍｌ');
 INSERT INTO fp_unit(unit, unit_name) VALUES('003', '個');
 INSERT INTO fp_unit(unit, unit_name) VALUES('004', '本');
