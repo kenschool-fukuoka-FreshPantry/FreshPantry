@@ -366,6 +366,20 @@ public class FoodBean {
 		return resultFoodBeanlist;
 
 	}
+
+
+	public static FoodBean getFoodData(String food_name) {
+		FoodBean resultFoodBean = new FoodBean();
+		//ArrayList<FoodNutrientBean> fnBeenList = new ArrayList<FoodNutrientBean>();
+
+		// 検索用SQL記述
+		String sql = "SELECT * FROM FOODMANAGE WHERE food_name LIKE '% + food_name + %'";
+
+		//resultFoodBean.setFoodData(sql);
+
+
+		return resultFoodBean;
+	}
 	public static void updateFoodData() {
 
 	}
