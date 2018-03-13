@@ -14,14 +14,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>内容確認</title>
+<title>登録完了</title>
 <link rel="stylesheet" type="text/css" href="fpbase.css" />
 
 </head>
 <body>
 <div align="center">
 
-<h1><font color="orange">内容確認</font></h1>
+<h1><font color="orange">登録完了しました。</font></h1>
 <br/>
 <form action="FoodEntryConfirmService" method="post" >
 <table border="0">
@@ -47,8 +47,7 @@
      </table>
 
      </br></br>
-	<p><button type=submit name ="buttonOn" value ="002">戻る</button>
-	<input type="button" onClick="location.href='Entry.jsp'" value="キャンセル" />
+	<p><input type="button" onClick="location.href='Entry.jsp'" value="キャンセル" /></p>
 </form>
 </div>
 </body>
