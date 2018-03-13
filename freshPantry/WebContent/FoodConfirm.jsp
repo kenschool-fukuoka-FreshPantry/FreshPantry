@@ -27,7 +27,7 @@
        <th>・食材名</th><td><%=fBean.getFoodName()%></td>
      </tr>
      <tr>
-       <th>・残量</th><td><%=fBean.getQuantity()%><%=fBean.getUnit()%></td>
+       <th>・残量</th><td><%=fBean.getQuantity()%><%=fBean.getUnitName()%></td>
      </tr>
      <tr>
        <th>・購入日</th><td><%=fBean.getPurchaseDate()%></td>
@@ -39,7 +39,8 @@
        <th>・カテゴリー</th><td><%=fBean.getCategoryName()%></td>
      </tr>
      <tr>
-       <th>・栄養素</th><td><%=fBean.getNutrientList()%></td>
+       <th>・栄養素</th><td><%=fBean.getNutrientList()%>
+       <input type="submit" value=" 登録 "></td>
      </tr>
      </br></br>
 	<p><input type="button" onClick="location.href='FoodEntry.jsp'" value="戻る" />
