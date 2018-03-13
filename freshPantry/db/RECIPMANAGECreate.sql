@@ -1,4 +1,4 @@
-CREATE TABLE recipmanage (
+CREATE TABLE fp_recipmanage (
   recip_no INTEGER(10) NOT NULL AUTO_INCREMENT ,
   recip_name VARCHAR(50) NOT NULL ,
   registration_time TIMESTAMP NOT NULL ,
