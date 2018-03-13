@@ -45,7 +45,7 @@ public class FoodEntryConfirmService extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("utf-8");
 		RequestDispatcher rd = null;
 		String url = "";
 		// TODO jsp name と相談
