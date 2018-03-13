@@ -43,11 +43,11 @@
        <button type=submit name ="buttonOn" value ="001">登録</button></td>
      </tr>
      </table>
-     </form>
+
      </br></br>
 	<p><button type=submit name ="buttonOn" value ="002">戻る</button>
 	<input type="button" onClick="location.href='Entry.jsp'" value="キャンセル" />
-
+</form>
 </div>
 </body>
 </html>
