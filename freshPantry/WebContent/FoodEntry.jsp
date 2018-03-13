@@ -149,7 +149,8 @@ int cnt = 1;
  </form>
 </br></br>
 	<p><input type="button" onClick="location.href='Entry.jsp'" value="戻る" />
-	   <input type="button" onClick="location.href='FoodConfirm.jsp'" value="次へ" /></p>
+	   <input type="button" onClick="location.href='FoodConfirm.jsp'" value="次へ" />
+	   <button type=submit name ="buttonOn" value ="2">次へ</button>
 
 	<br/>
 </div>
