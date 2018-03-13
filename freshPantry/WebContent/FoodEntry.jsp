@@ -92,8 +92,9 @@ function input(){
 
 	for(int i = 0; i <ul.size() ;i++){
 		UnitBean u = ul.get(i);
+		String unit=u.getUnit();
 
-%>	<option value="<%=ul.get(i)%>">単位</option>
+%>	<option value="<%=unit%>">単位</option>
 
 <%
 }
@@ -119,8 +120,9 @@ function input(){
 
 	for(int i = 0; i <cl.size() ;i++){
 		CategoryBean c = cl.get(i);
+		String category=c.getCategory();
 
-%><option value="<%=cl.get(i)%>">選択してください</option>
+%><option value="<%=c.getCategory%>">選択してください</option>
 <%
 }
 %>
