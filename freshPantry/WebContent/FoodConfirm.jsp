@@ -26,22 +26,22 @@
 <form action="FoodEntryConfirmService" method="post" >
 <table border="0">
 <tr>
-       <th>・食材名</th><td><%=fBean.getFoodName()%></td>
+       <th align="left">・食材名</th><td><%=fBean.getFoodName()%></td>
      </tr>
      <tr>
-       <th>・残量</th><td><%=fBean.getQuantity()%><%=fBean.getUnitName()%></td>
+       <th align="left">・残量</th><td><%=fBean.getQuantity()%><%=fBean.getUnitName()%></td>
      </tr>
      <tr>
-       <th>・購入日</th><td><%=fBean.getPurchaseDate()%></td>
+       <th align="left">・購入日</th><td><%=fBean.getPurchaseDate()%></td>
      </tr>
      <tr>
-       <th>・賞味期限</th><td><%=fBean.getExpirationDate()%></td>
+       <th align="left">・賞味期限</th><td><%=fBean.getExpirationDate()%></td>
      </tr>
      <tr>
-       <th>・カテゴリー</th><td><%=fBean.getCategoryName()%></td>
+       <th align="left">・カテゴリー</th><td><%=fBean.getCategoryName()%></td>
      </tr>
      <tr>
-       <th>・栄養素</th><td><%=fBean.getNutrientList()%></td>
+       <th align="left">・栄養素</th><td><%=fBean.getNutrientList()%></td>
      </tr>
      </table>
 
