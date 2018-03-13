@@ -86,18 +86,18 @@ function input(){
 	<th align="left">・残量（半角数字）<font color="red">（必須）</font></th>
  		<td><input type="text" name="quantity" size="5" />
  			<select name="unit">
-        	 <option value="">単位</opution>
+        	 <option value="">単位</option>
 <%
 	ArrayList<UnitBean> ul = UnitBean.getUnitIdList();
 
 	for(int i = 0; i <ul.size() ;i++){
 		UnitBean u = ul.get(i);
 
-%>	<option value="<%=u.getUnit%>">単位</opution>
+%>	<option value="<%=ul.get(i)%>">単位</option>
 
 <%
-
-} %>
+}
+%>
 
        		 </select></td>
  	</tr>
@@ -113,15 +113,16 @@ function input(){
  	<th align="left">・カテゴリー<font color="red">（必須）</font></th>
  		<td><select name="ｃategory_id">
 
- 		<option value="">選択してください</opution>
+ 		<option value="">選択してください</option>
 <%
 	ArrayList<CategoryBean> cl = CategoryBean.getCategoryIdList();
 
 	for(int i = 0; i <cl.size() ;i++){
 		CategoryBean c = cl.get(i);
 
-%><option value="">選択してください</option>
-<%}
+%><option value="<%=cl.get(i)%>">選択してください</option>
+<%
+}
 %>
 
         </select></td>
