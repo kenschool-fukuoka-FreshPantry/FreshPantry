@@ -369,9 +369,10 @@ public class FoodBean {
 	}
 
 
-	public static FoodBean getFoodData(String food_name) {
+	public static ArrayList<FoodBean> getFoodData(String food_name) {
 		ArrayList<FoodBean> resultFoodBean = new ArrayList<FoodBean>();
 		PreparedStatement pst = null;
+		Connection con = null;
 		ResultSet rs = null;
 		String sql = null;
 
@@ -381,9 +382,10 @@ public class FoodBean {
 			e.printStackTrace();
 		}
 		try{
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root","root");
 			sql = "SELECT * FROM FOODMANAGE WHERE like '%" + food_name + "%'";
-			rs = pst.executeQuery(sql);
-
+			pst = con.prepareStatement(sql);
+			rs = pst.executeQuery();
 			while(rs.next()){
 				FoodBean f = new FoodBean();
 				f.setUnit(rs.getString("unit"));
