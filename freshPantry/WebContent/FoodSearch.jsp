@@ -57,7 +57,7 @@
  }
  %>
   <div align="center">
-  	<h2><font color="orange">食材検索</font></h2>
+  	<h2><font color="#FF6699">食材検索</font></h2>
 
 	<hr/>
 
