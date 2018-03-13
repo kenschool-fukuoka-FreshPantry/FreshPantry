@@ -120,9 +120,9 @@ function input(){
 
 	for(int i = 0; i <cl.size() ;i++){
 		CategoryBean c = cl.get(i);
-		String category=c.getCategory();
+		String category=c.getCategoryId();
 
-%><option value="<%=c.getCategory%>">選択してください</option>
+%><option value="<%=category%>">選択してください</option>
 <%
 }
 %>
