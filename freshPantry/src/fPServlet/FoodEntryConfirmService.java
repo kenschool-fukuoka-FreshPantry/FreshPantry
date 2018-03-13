@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import fPBean.FoodBean;
+import fPBean.FoodNutrientBean;
 
 /**
  * @author aka
@@ -31,14 +32,12 @@ public class FoodEntryConfirmService extends HttpServlet {
      */
     public FoodEntryConfirmService() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doPost(request, response);
 	}
 
@@ -46,7 +45,6 @@ public class FoodEntryConfirmService extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		RequestDispatcher rd = null;
 		String url = "";
@@ -59,7 +57,7 @@ public class FoodEntryConfirmService extends HttpServlet {
 			boolean endFlg = false;
 			// 食材入力１件のデータ
 			FoodBean foodBeanData = new FoodBean();
-			ArrayList<FoodBean> foodBeanList = new ArrayList<FoodBean>();
+			ArrayList<FoodNutrientBean> nutrientList = new ArrayList<FoodNutrientBean>();
 
 			switch (buttonOnValue){
 
@@ -77,6 +75,8 @@ public class FoodEntryConfirmService extends HttpServlet {
 				foodBeanData.setExpirationDate(request.getParameter("expiration_date"));
 				foodBeanData.setCategoryId(request.getParameter("category_id"));
 				// 栄養素
+
+
 				while(!endFlg){
 					String nutrientName = request.getParameter("nutrient"+i);
 
@@ -87,20 +87,19 @@ public class FoodEntryConfirmService extends HttpServlet {
 					} else {
 
 						if(!nutrientName.isEmpty()){
-							// TODO 栄養素のBean定義が決まったら差し替え
-							// 空栄養素以外を登録する
-//							FoodBean nutrientData = new FoodBean();
-//							nutrientData.setId(nutrientName);
-//
-//							foodBeanList.add(nutrientData);
+							// 登録時には、空の栄養素は登録しない
+							FoodNutrientBean nutrientData = new FoodNutrientBean();
+							nutrientData.setNutrient(nutrientName);
+
+							nutrientList.add(nutrientData);
 						}
 
 					}
 					i++; // 次の栄養素の判定へ
 				}
-				// TODO foodBeanData.setId(foodBeanList);
+				foodBeanData.setNutrientList(nutrientList);
 				// 登録呼び出し
-				// FoodBean.addFoodData(foodBeanData);
+				FoodBean.addFoodData(foodBeanData);
 
 				// 新規登録・変更へ
 				url = "/Entry.jsp";
@@ -115,8 +114,6 @@ public class FoodEntryConfirmService extends HttpServlet {
 				foodBeanData.setExpirationDate(request.getParameter("expiration_date"));
 				foodBeanData.setCategoryId(request.getParameter("category_id"));
 
-				// 栄養素
-				// TODO 栄養素のBean定義が決まったら差し替え
 				while(!endFlg){
 					String nutrientName = request.getParameter("nutrient"+i);
 
@@ -125,16 +122,15 @@ public class FoodEntryConfirmService extends HttpServlet {
 						endFlg = true;
 
 					} else {
-//						// TODO 栄養素のBean定義が決まったら差し替え
-//						FoodBean nutrientData = new FoodBean();
-//						nutrientData.setId(nutrientName);
-//
-//						foodBeanList.add(nutrientData);
+						FoodNutrientBean nutrientData = new FoodNutrientBean();
+						nutrientData.setNutrient(nutrientName);
+
+						nutrientList.add(nutrientData);
 					}
 					i++; // 次の栄養素の判定へ
 				}
-				// TODO foodBeanData.setId(foodBeanList);
-				request.setAttribute("foodData", foodBeanData);
+				foodBeanData.setNutrientList(nutrientList);
+				request.setAttribute("foodB", foodBeanData);
 
 				url = "/FoodEntry.jsp";
 				break;

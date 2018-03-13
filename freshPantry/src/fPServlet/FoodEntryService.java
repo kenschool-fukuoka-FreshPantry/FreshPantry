@@ -1,6 +1,7 @@
 package fPServlet;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -10,7 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fPBean.CategoryBean;
 import fPBean.FoodBean;
+import fPBean.FoodNutrientBean;
+import fPBean.UnitBean;
 
 /**
  * @author aka
@@ -28,15 +32,12 @@ public class FoodEntryService extends HttpServlet {
 	 */
 	public FoodEntryService() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		// response.getWriter().append("Served at: ").append(request.getContextPath());
 		doPost(request, response);
 	}
 
@@ -44,7 +45,6 @@ public class FoodEntryService extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		RequestDispatcher rd = null;
 		String url = "";
@@ -55,13 +55,16 @@ public class FoodEntryService extends HttpServlet {
 			foodBeanData.setFoodName(request.getParameter("food_name"));
 			foodBeanData.setQuantity(Integer.parseInt(request.getParameter("quantity")));
 			foodBeanData.setUnit(request.getParameter("unit"));
+			// unit名の取得・設定
+			foodBeanData.setUnitName(getUnitName(request.getParameter("unit")));
 			foodBeanData.setPurchaseDate(request.getParameter("purchase_date"));
 			foodBeanData.setExpirationDate(request.getParameter("expiration_date"));
 			foodBeanData.setCategoryId(request.getParameter("category_id"));
+			// category名称の取得・設定
+			foodBeanData.setCategoryId(getCategoryName(request.getParameter("category_id")));
 
 			// 栄養素
-			// TODO 栄養素のBean定義が決まったら差し替え
-			ArrayList<FoodBean> foodBeanList = new ArrayList<FoodBean>();
+			ArrayList<FoodNutrientBean> nutrientList = new ArrayList<FoodNutrientBean>();
 
 			int i = 1;
 			boolean endFlg = false;
@@ -73,18 +76,16 @@ public class FoodEntryService extends HttpServlet {
 					endFlg = true;
 
 				} else {
-						// TODO 栄養素のBean定義が決まったら差し替え
-						// 空栄養素以外を登録する
-//						FoodBean nutrientData = new FoodBean();
-//						nutrientData.setId(nutrientName);
-//
-//						foodBeanList.add(nutrientData);
+					FoodNutrientBean nutrientData = new FoodNutrientBean();
+					nutrientData.setNutrient(nutrientName);
+
+					nutrientList.add(nutrientData);
 				}
 				i++; // 次の栄養素の判定へ
 			}
-			// TODO foodBeanData.setId(foodBeanList);
-			request.setAttribute("foodData", foodBeanData);
-			url = "/FoodEntryConfirm.jsp";
+			foodBeanData.setNutrientList(nutrientList);
+			request.setAttribute("foodB", foodBeanData);
+			url = "/FoodConfirm.jsp";
 			// 最後にフォワード
 			rd = request.getRequestDispatcher(url);
 			rd.forward(request, response);
@@ -94,5 +95,37 @@ public class FoodEntryService extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
+	/*
+	 * 単位に合致する単位名称を返す
+	 */
+	private String getUnitName(String parameter) throws SQLException {
 
+		String unitName = "";
+		ArrayList<UnitBean> unitList = UnitBean.getUnitIdList();
+
+		for (UnitBean ub :unitList){
+			if(ub.getUnit().equals(parameter)){
+				unitName = ub.getUnitName();
+				break;
+			}
+		}
+		return unitName;
+	}
+
+	/*
+	 * カテゴリーに合致するカテゴリー名称を返す
+	 */
+	private String getCategoryName(String parameter) throws SQLException {
+
+		String categoryName = "";
+		ArrayList<CategoryBean> categoryList = CategoryBean.getCategoryIdList();
+
+		for (CategoryBean cb :categoryList){
+			if(cb.getCategoryId().equals(parameter)){
+				categoryName = cb.getCategoryName();
+				break;
+			}
+		}
+		return categoryName;
+	}
 }
