@@ -41,13 +41,12 @@
        <th>・カテゴリー</th><td><%=fBean.getCategoryName()%></td>
      </tr>
      <tr>
-       <th>・栄養素</th><td><%=fBean.getNutrientList()%>
-       <button type=submit name ="buttonOn" value ="001">登録</button></td>
+       <th>・栄養素</th><td><%=fBean.getNutrientList()%></td>
      </tr>
      </table>
 
      </br></br>
-	<p><input type="button" onClick="location.href='Entry.jsp'" value="キャンセル" /></p>
+	<p><input type="button" onClick="location.href='Entry.jsp'" value="新規登録・変更・削除へ戻る" /></p>
 </form>
 </div>
 </body>
