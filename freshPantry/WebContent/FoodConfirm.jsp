@@ -40,12 +40,12 @@
      </tr>
      <tr>
        <th>・栄養素</th><td><%=fBean.getNutrientList()%>
-       <button type=submit name ="buttonOn" value ="3">登録</button></td>
+       <button type=submit name ="buttonOn" value ="001">登録</button></td>
      </tr>
      </table>
      </form>
      </br></br>
-	<p><button type=submit name ="buttonOn" value ="1">戻る</button>
+	<p><button type=submit name ="buttonOn" value ="002">戻る</button>
 	<input type="button" onClick="location.href='Entry.jsp'" value="キャンセル" />
 
 </div>
