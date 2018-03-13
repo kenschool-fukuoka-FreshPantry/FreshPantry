@@ -388,16 +388,27 @@ public class FoodBean {
 			rs = pst.executeQuery();
 			while(rs.next()){
 				FoodBean f = new FoodBean();
+				f.setFoodNo(Integer.parseInt(rs.getString("food_no")));
+				f.setFoodName(rs.getString("food_name"));
+				f.setQuantity(Integer.parseInt(rs.getString("quantity")));
 				f.setUnit(rs.getString("unit"));
 				f.setUnitName(rs.getString("unit_name"));
+				f.setExpirationDate(rs.getString("expiration_date"));
+				f.setPurchaseDate(rs.getString("purchase_date"));
+				f.setCategoryId(rs.getString("category_id"));
+				f.setCategoryName(rs.getString("category_name"));
+				//f.setNutrientList(rs.getString("nutrient_list"));
+
 				resultFoodBean.add(f);
 			}
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally{
 			try{
-				if(rs != null) rs.close();
 				if(pst != null) pst.close();
+				if(con != null) con.close();
+				if(rs != null) rs.close();
+
 			}
 			catch(Exception e){
 				e.printStackTrace();
@@ -405,6 +416,8 @@ public class FoodBean {
 		}
 		return resultFoodBean;
 	}
+
+
 
 	public static void updateFoodData() {
 
