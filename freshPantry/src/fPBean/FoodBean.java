@@ -2,6 +2,7 @@ package fPBean;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -369,17 +370,40 @@ public class FoodBean {
 
 
 	public static FoodBean getFoodData(String food_name) {
-		FoodBean resultFoodBean = new FoodBean();
-		//ArrayList<FoodNutrientBean> fnBeenList = new ArrayList<FoodNutrientBean>();
+		ArrayList<FoodBean> resultFoodBean = new ArrayList<FoodBean>();
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		String sql = null;
 
-		// 検索用SQL記述
-		String sql = "SELECT * FROM FOODMANAGE WHERE food_name LIKE '%" + food_name + "%";
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch  (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		try{
+			sql = "SELECT * FROM FOODMANAGE WHERE like '%" + food_name + "%'";
+			rs = pst.executeQuery(sql);
 
-		//resultFoodBean.setFoodData(sql);
-
-
+			while(rs.next()){
+				FoodBean f = new FoodBean();
+				f.setUnit(rs.getString("unit"));
+				f.setUnitName(rs.getString("unit_name"));
+				resultFoodBean.add(f);
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try{
+				if(rs != null) rs.close();
+				if(pst != null) pst.close();
+			}
+			catch(Exception e){
+				e.printStackTrace();
+			}
+		}
 		return resultFoodBean;
 	}
+
 	public static void updateFoodData() {
 
 	}
