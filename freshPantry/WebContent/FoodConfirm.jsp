@@ -39,7 +39,7 @@
        <th>・カテゴリー</th><td><%=fBean.getCategoryName()%></td>
      </tr>
      <tr>
-       <th>・栄養素</th><td><%=fBean.getNutrient()%></td>
+       <th>・栄養素</th><td><%=fBean.getNutrientList()%></td>
      </tr>
      </br></br>
 	<p><input type="button" onClick="location.href='FoodEntry.jsp'" value="戻る" />
