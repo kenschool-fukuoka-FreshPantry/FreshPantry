@@ -24,9 +24,8 @@ import fPBean.FoodNutrientBean;
 public class FoodEntryConfirmService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	// 遷移
-	static final String ON_CANCEL = "001";
-	static final String ON_ADD = "002";
-	static final String ON_BACK = "003";
+	static final String ON_ADD = "001";
+	static final String ON_BACK = "002";
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -48,11 +47,9 @@ public class FoodEntryConfirmService extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		RequestDispatcher rd = null;
 		String url = "";
-		// TODO jsp name と相談
 		String buttonOnValue = request.getParameter("buttonOn");
 
 		try {
-
 			int i = 1;
 			boolean endFlg = false;
 			// 食材入力１件のデータ
@@ -60,11 +57,6 @@ public class FoodEntryConfirmService extends HttpServlet {
 			ArrayList<FoodNutrientBean> nutrientList = new ArrayList<FoodNutrientBean>();
 
 			switch (buttonOnValue){
-
-			case ON_CANCEL:
-				// 何もわたさず新規登録・変更へ
-				url = "/Entry.jsp";
-				break;
 
 			case ON_ADD:
 				// 登録実施
