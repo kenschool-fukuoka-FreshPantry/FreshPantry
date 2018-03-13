@@ -6,6 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>新規登録・変更・削除</title>
+<link rel="stylesheet" type="text/css" href="fpbase.css" />
+
 </head>
 <body>
 <div align="center">
