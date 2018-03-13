@@ -72,7 +72,7 @@ function input(){
 </head>
 <body>
 <div align="center">
-<h1><font color="orange">食材入力</font></h1>
+<h1><font color="orange">食材入力(直打ち)</font></h1>
 <br/>
 	<form action="FoodEntryService" method="post" onSubmit="return dataCheck(this);">
 	<table border="0">
@@ -108,7 +108,7 @@ function input(){
  	</tr>
  	<tr>
  	<th align="left">・カテゴリー<font color="red">（必須）</font></th>
- 		<td><input type="text" name="quantity" size="5" />
+ 		<td><input type="text" name="category_id" size="5" />
  			<select name="category_id">
  			 <option value="">選択してください</option>
         	 <option value="001">肉類</option>
