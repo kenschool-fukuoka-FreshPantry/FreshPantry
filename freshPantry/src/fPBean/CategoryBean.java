@@ -52,7 +52,7 @@ public class CategoryBean {
 			ic = new InitialContext();
 			ds = (DataSource)ic.lookup("java:comp/env/mysql");
 			con = ds.getConnection();
-			sql = "SELECT * FROM CATEGORY ORDER BY category_id ASC";
+			sql = "SELECT * FROM FP_CATEGORY ORDER BY category_id ASC";
 			pst = con.prepareStatement(sql);
 			rs = pst.executeQuery();
 

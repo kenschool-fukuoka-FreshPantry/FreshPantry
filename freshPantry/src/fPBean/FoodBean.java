@@ -110,7 +110,7 @@ public class FoodBean {
 		try {
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "root");
 			st = con.createStatement();
-			sql ="SELECT MAX(food_no) FROM FOODMANAGE";
+			sql ="SELECT MAX(food_no) FROM FP_FOODMANAGE";
 			rs = st.executeQuery(sql);
 
 			if(rs.next()){
@@ -131,7 +131,7 @@ public class FoodBean {
 		try {
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "root");
 			st = con.createStatement();
-			sql ="INSERT INTO FOODMANAGE("
+			sql ="INSERT INTO FP_FOODMANAGE("
 					+ "category_id,"
 					+ "food_no,"
 					+ "food_name,"
@@ -173,7 +173,7 @@ public class FoodBean {
 
 				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "root");
 				st = con.createStatement();
-				sql ="INSERT INTO FOOD("
+				sql ="INSERT INTO FP_FOOD("
 						+ "food_no,"
 						+ "nutrient_no,"
 						+ "nutrient,"
@@ -230,10 +230,10 @@ public class FoodBean {
 						+ "fm.unit AS unit,"
 						+ "un.unit_name AS unit_name,"
 						+ "fo.nutrient AS nutrient"
-						+ " FROM FOODMANAGE fm "
-						+ "INNER JOIN UNIT un USEING(unit) "
-						+ "INNER JOIN CATEGORY ca USEING(category_id) "
-						+ "INNER JOIN FOOD fo USEING(food_no) "
+						+ " FROM FP_FOODMANAGE fm "
+						+ "INNER JOIN FP_UNIT un USEING(unit) "
+						+ "INNER JOIN FP_CATEGORY ca USEING(category_id) "
+						+ "INNER JOIN FP_FOOD fo USEING(food_no) "
 						+ " WHERE fm.food_no = " + foodNo + ";"
 						;
 				rs = st.executeQuery(sql);
@@ -304,9 +304,9 @@ public class FoodBean {
 						+ "fm.quantity AS quantity,"
 						+ "fm.unit AS unit,"
 						+ "un.unit_name AS unit_name"
-						+ " FROM FOODMANAGE fm "
-						+ "INNER JOIN UNIT un USEING(unit) "
-						+ "INNER JOIN CATEGORY ca USEING(category_id) "
+						+ " FROM FP_FOODMANAGE fm "
+						+ "INNER JOIN FP_UNIT un USEING(unit) "
+						+ "INNER JOIN FP_CATEGORY ca USEING(category_id) "
 						+ " ORDER BY fm.food_name ASC ;"
 						;
 				rs = st.executeQuery(sql);
@@ -324,9 +324,9 @@ public class FoodBean {
 						+ "fm.quantity AS quantity,"
 						+ "fm.unit AS unit,"
 						+ "un.unit_name AS unit_name"
-						+ " FROM FOODMANAGE fm "
-						+ "INNER JOIN UNIT un USEING(unit) "
-						+ "INNER JOIN CATEGORY ca USEING(category_id) "
+						+ " FROM FP_FOODMANAGE fm "
+						+ "INNER JOIN FP_UNIT un USEING(unit) "
+						+ "INNER JOIN FP_CATEGORY ca USEING(category_id) "
 						+ " WHERE fm.category_id = '" + categryId + "'"
 						+ " ORDER BY fm.food_name ASC ;"
 						;
@@ -373,7 +373,7 @@ public class FoodBean {
 		//ArrayList<FoodNutrientBean> fnBeenList = new ArrayList<FoodNutrientBean>();
 
 		// 検索用SQL記述
-		String sql = "SELECT * FROM FOODMANAGE WHERE food_name LIKE '% + food_name + %'";
+		String sql = "SELECT * FROM FOODMANAGE WHERE food_name LIKE '%" + food_name + "%";
 
 		//resultFoodBean.setFoodData(sql);
 

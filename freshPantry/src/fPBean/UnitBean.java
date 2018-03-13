@@ -52,7 +52,7 @@ public class UnitBean {
 			ic = new InitialContext();
 			ds = (DataSource)ic.lookup("java:comp/env/mysql");
 			con = ds.getConnection();
-			sql = "SELECT * FROM UNIT ORDER BY unit ASC";
+			sql = "SELECT * FROM FP_UNIT ORDER BY unit ASC";
 			pst = con.prepareStatement(sql);
 			rs = pst.executeQuery();
 
@@ -63,7 +63,7 @@ public class UnitBean {
 				al.add(u);
 			}
 		}catch(Exception e){
-
+			e.printStackTrace();
 		}finally{
 			try{
 				if(rs != null) rs.close();
@@ -71,6 +71,7 @@ public class UnitBean {
 				if(con != null) con.close();
 			}
 			catch(Exception e){
+				e.printStackTrace();
 			}
 		}
 		return al;
