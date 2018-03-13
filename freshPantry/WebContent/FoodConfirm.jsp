@@ -21,7 +21,7 @@
 
 <h1><font color="orange">内容確認</font></h1>
 <br/>
-<form action="FoodEntryConfirmService" method="post" />
+<form action="FoodEntryConfirmService" method="post" >
 <table border="0">
 <tr>
        <th>・食材名</th><td><%=fBean.getFoodName()%></td>
@@ -42,10 +42,12 @@
        <th>・栄養素</th><td><%=fBean.getNutrientList()%>
        <button type=submit name ="buttonOn" value ="3">登録</button></td>
      </tr>
+     </table>
+     </form>
      </br></br>
 	<p><button type=submit name ="buttonOn" value ="1">戻る</button>
 	<input type="button" onClick="location.href='Entry.jsp'" value="キャンセル" />
-</table>
+
 </div>
 </body>
 </html>
