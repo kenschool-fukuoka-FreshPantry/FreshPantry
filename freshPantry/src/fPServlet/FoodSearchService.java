@@ -37,12 +37,12 @@ public class FoodSearchService extends HttpServlet {
 		//jspに入力された情報を取得
 		String food_name = (String)request.getParameter("food_name");
 
-		//beanをインスタンス化、値のセット
+		//bean値のセット
 		ArrayList<FoodBean>resultFoodBean = FoodBean.getFoodData(food_name);
 
-		request.setAttribute("resultList", resultFoodBean);
+			request.setAttribute("resultList", resultFoodBean);
 
-		request.getRequestDispatcher("FoodData.jsp").forward(request, response);
+			request.getRequestDispatcher("FoodData.jsp").forward(request, response);
 
 		}
 
