@@ -135,11 +135,19 @@ function input(){
 		CategoryBean c = cl.get(i);
 		String category=c.getCategoryId();
 
-%><option value="<%=category%>"><%=c.getCategoryName() %></option>
+%>
+<% if("000".equals(category)){
+
+%>
+<%}else{
+
+ %>
+ <option value="<%=category%>"><%=c.getCategoryName() %></option>
+<%} %>
+
 <%
 }
 %>
-
         </select></td>
  	</tr>
  	<tr>
