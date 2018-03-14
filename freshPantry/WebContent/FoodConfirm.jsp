@@ -26,8 +26,9 @@
 </head>
 <body>
 <div align="center">
+<font color="red" size="5">登録完了しました。</font></h1>
+<h1><font color="orange">内容確認</font></h1>
 
-<h1><font color="orange">登録完了しました。</font></h1>
 <br/>
 <form action="FoodEntryConfirmService" method="post" >
 <table border="0">
