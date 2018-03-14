@@ -54,13 +54,13 @@ function input(){
 		if(obj.food_name.value.length < 1){
 			msg += "食材名は必須項目です。\n";
 		}
-		if(!obj.quantity.value.match(/^[0-9]+$/g)||obj.select.unit == 0){
+		if(!obj.quantity.value.match(/^[0-9]+$/g)||obj.unit.value = ""){
 			msg += "残量は必須項目です。\n"
 		}
 		if(!obj.expiration_date.value.match(/^[0-9]+$/g)){
 			msg += "賞味期限は必須項目です。\n";
 		}
-		if(obj.select.ｃategory_id == 0){
+		if(obj.ｃategory_id.value == ""){
 			msg += "カテゴリーは必須項目です。¥n";
 		}
 
