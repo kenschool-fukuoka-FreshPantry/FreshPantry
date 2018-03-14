@@ -23,6 +23,10 @@
  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>食材情報表示</title>
   <link rel="stylesheet" type="text/css" href="fpbase.css" />
+  <style>
+    th {align:left;}
+
+  </style>
 
  </head>
  <body>
@@ -30,6 +34,7 @@
 
 	<h1><font color="pink">食材情報表示</font></h1>
 	<br/>
+	<hr/>
 
 <%
 	if (foodList != null) {
@@ -37,12 +42,13 @@
 			FoodBean foodBean = foodList.get(i);
 %>
 
-	<table border="0">
+	<table align="center" border="0">
 	<tr>
        <th>・食材名</th><td><%=foodBean.getFoodName()%></td>
      </tr>
      <tr>
-       <th>・残量</th><td><%=foodBean.getQuantity()%></td>
+       <th>・残量</th><td><%=foodBean.getQuantity()%>
+						  <%=foodBean.getUnitName()%></td>
      </tr>
      <tr>
        <th>・購入日</th><td><%=foodBean.getPurchaseDate()%></td>
@@ -53,17 +59,13 @@
      <tr>
        <th>・カテゴリー</th><td><%=foodBean.getCategoryName()%></td>
      </tr>
-     <tr>
-       <th>・栄養素</th><td><%=foodBean.getNutrientList()%></td>
-     </tr>
      <br/>
      </table>
-
+	<hr/>
 <%
 			}
 		}
  %>
-
 	<p>
 	<input type="button" onclick="location.href='FoodSearch.jsp'" value="戻る" />
 	<input type="button" onclick="location.href='Entry.jsp'" value="メニューへ" />

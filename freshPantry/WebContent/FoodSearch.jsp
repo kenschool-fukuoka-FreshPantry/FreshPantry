@@ -17,32 +17,6 @@
 	<title>食材検索</title>
  <link rel="stylesheet" type="text/css" href="fpbase.css" />
 
- <script type="text/javascript">
-   <!--
-    function check(){
-	  if(document.foodsearch.food_name.value==""){
-		  window.confirm("全て表示しますか？");
-		  return false;
-	  }
-	  return true;
-  }
-   //-->
- </script>
-<%-- 上か下のチェックを行う   --%>
-<%--  <script type="text/javascript">
-   <!--
-    function check(){
-	  if(document.foodsearch.food_name.value==""){
-		  window.alert("食材を入力してください。");
-		  return false;
-	  }
-	  return true;
-  }
-
-   //-->
- </script>
---%>
-
  </head>
  <body>
 
