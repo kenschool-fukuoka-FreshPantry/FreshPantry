@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import fPBean.FoodBean;
 
 /**
+ * @author 森川
+ * @version 1.0
+ *
  * Servlet implementation class FoodSearchService
  */
 @WebServlet("/FoodSearchService")

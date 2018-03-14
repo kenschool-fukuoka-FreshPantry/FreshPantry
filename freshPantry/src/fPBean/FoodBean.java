@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @author 中山佳代子
  * @version 1.0
  * 赤星
- *
+ * 森川
  */
 public class FoodBean {
 
