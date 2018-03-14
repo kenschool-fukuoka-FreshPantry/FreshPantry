@@ -111,11 +111,11 @@ public class FoodBean {
 		try {
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "root");
 			st = con.createStatement();
-			sql ="SELECT MAX(food_no) FROM FP_FOODMANAGE";
+			sql ="SELECT MAX(food_no) AS max FROM FP_FOODMANAGE";
 			rs = st.executeQuery(sql);
 
 			if(rs.next()){
-				setFoodNo = rs.getInt("food_no") + 1;
+				setFoodNo = rs.getInt("max") + 1;
 			}
 
 		} catch (Exception e) {
@@ -147,10 +147,10 @@ public class FoodBean {
 					+ setFoodNo  + ",'"
 					+ foodBean.getFoodName()  + "','"
 					+ foodBean.getExpirationDate()  + "','"
-					+ foodBean.getPurchaseDate()  + "','"
-					+ foodBean.getQuantity()  + "','"
+					+ foodBean.getPurchaseDate()  + "',"
+					+ foodBean.getQuantity()  + ",'"
 					+ foodBean.getUnit()  + "',"
-					+ "current_timestamp()" + ","
+					+ "current_timestamp(),"
 					+ "'0000-00-00 00:00:00')";
 			st.executeUpdate(sql);
 
@@ -181,10 +181,10 @@ public class FoodBean {
 						+ "registration_time,"
 						+ "update_time)"
 						+ "VALUES('"
-						+ setFoodNo  + ",'"
-						+ i  + "','"
-						+ fnBeanData.getNutrient()  + "','"
-						+ "current_timestamp()" + ","
+						+ setFoodNo  + ","
+						+ i  + ",'"
+						+ fnBeanData.getNutrient()  + "',"
+						+ "current_timestamp(),"
 						+ "'0000-00-00 00:00:00')";
 				st.executeUpdate(sql);
 				i++;

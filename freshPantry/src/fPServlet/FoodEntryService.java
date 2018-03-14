@@ -59,9 +59,9 @@ public class FoodEntryService extends HttpServlet {
 			foodBeanData.setUnitName(getUnitName(request.getParameter("unit")));
 			foodBeanData.setPurchaseDate(request.getParameter("purchase_date"));
 			foodBeanData.setExpirationDate(request.getParameter("expiration_date"));
-			foodBeanData.setCategoryId(request.getParameter("category_id"));
+			foodBeanData.setCategoryId(request.getParameter("ｃategory_id"));
 			// category名称の取得・設定
-			foodBeanData.setCategoryId(getCategoryName(request.getParameter("category_id")));
+			foodBeanData.setCategoryName(getCategoryName(request.getParameter("ｃategory_id")));
 
 			// 栄養素
 			ArrayList<FoodNutrientBean> nutrientList = new ArrayList<FoodNutrientBean>();
@@ -76,14 +76,19 @@ public class FoodEntryService extends HttpServlet {
 					endFlg = true;
 
 				} else {
+					if(!nutrientName.isEmpty()){
 					FoodNutrientBean nutrientData = new FoodNutrientBean();
 					nutrientData.setNutrient(nutrientName);
 
 					nutrientList.add(nutrientData);
+					}
 				}
 				i++; // 次の栄養素の判定へ
 			}
 			foodBeanData.setNutrientList(nutrientList);
+			FoodBean.addFoodData(foodBeanData);
+
+
 			request.setAttribute("foodB", foodBeanData);
 			url = "/FoodConfirm.jsp";
 			// 最後にフォワード

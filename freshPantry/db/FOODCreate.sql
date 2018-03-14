@@ -3,7 +3,7 @@ CREATE TABLE fp_food (
   nutrient_no INTEGER(2) NOT NULL ,
   nutrient VARCHAR(50) ,
   registration_time TIMESTAMP NOT NULL ,
-  update_time TIMESTAMP NOT NULL
-  PRIMARY KEY(nutrient_no) ,
+  update_time TIMESTAMP NOT NULL,
+  PRIMARY KEY(food_no,nutrient_no) ,
   FOREIGN KEY(food_no) REFERENCES fp_foodmanage(food_no)
 );
