@@ -130,6 +130,13 @@ public class FoodBean {
 		}
 
 		try {
+			String prDate = null;
+
+			if(foodBean.getPurchaseDate() != null && !foodBean.getPurchaseDate().isEmpty() ){
+				prDate = "'" +foodBean.getPurchaseDate()+"'"  ;
+			}
+
+
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "root");
 			st = con.createStatement();
 			sql ="INSERT INTO FP_FOODMANAGE("
@@ -146,8 +153,8 @@ public class FoodBean {
 					+ foodBean.getCategoryId() + "',"
 					+ setFoodNo  + ",'"
 					+ foodBean.getFoodName()  + "','"
-					+ foodBean.getExpirationDate()  + "','"
-					+ foodBean.getPurchaseDate()  + "',"
+					+ foodBean.getExpirationDate()  + "',"
+					+ prDate  + ","
 					+ foodBean.getQuantity()  + ",'"
 					+ foodBean.getUnit()  + "',"
 					+ "current_timestamp(),"
