@@ -38,9 +38,7 @@ public class FoodSearchService extends HttpServlet {
 		String food_name = (String)request.getParameter("food_name");
 
 		//beanをインスタンス化、値のセット
-		FoodBean fb = new FoodBean();
-
-		ArrayList<FoodBean>resultFoodBean = fb.getFoodData(food_name);
+		ArrayList<FoodBean>resultFoodBean = FoodBean.getFoodData(food_name);
 
 		request.setAttribute("resultList", resultFoodBean);
 
