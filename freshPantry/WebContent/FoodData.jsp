@@ -13,17 +13,9 @@
 <%@page import="java.util.Iterator"%>
 
 <%
-	List<FoodBean> foodList = (List<FoodBean>)request.getAttribute("foodList");
+	ArrayList<FoodBean> foodList = (ArrayList<FoodBean>)request.getAttribute("resultList");
  %>
 
-<%
-	String no = (String)request.getAttribute("no");
-	String food_name = (String)request.getAttribute("food_name");
-
-	FoodBean fBean = (FoodBean)request.getAttribute("foodB");
-
-	String res = (String)request.getAttribute("result");
- %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -36,7 +28,7 @@
  <body>
 	<div align="center">
 
-	<h1><font color="pink">食材情報表示</font></h1>		<%--<form action="FoodDataService" method="post" />--%>
+	<h1><font color="pink">食材情報表示</font></h1>
 	<br/>
 
 <%
@@ -47,22 +39,22 @@
 
 	<table border="0">
 	<tr>
-       <th>・食材名</th><td><%=fBean.getFoodName()%></td>
+       <th>・食材名</th><td><%=foodBean.getFoodName()%></td>
      </tr>
      <tr>
-       <th>・残量</th><td><%=fBean.getQuantity()%><%=fBean.getUnitName()%></td>
+       <th>・残量</th><td><%=foodBean.getQuantity()%></td>
      </tr>
      <tr>
-       <th>・購入日</th><td><%=fBean.getPurchaseDate()%></td>
+       <th>・購入日</th><td><%=foodBean.getPurchaseDate()%></td>
      </tr>
      <tr>
-       <th>・賞味期限</th><td><%=fBean.getExpirationDate()%></td>
+       <th>・賞味期限</th><td><%=foodBean.getExpirationDate()%></td>
      </tr>
      <tr>
-       <th>・カテゴリー</th><td><%=fBean.getCategoryName()%></td>
+       <th>・カテゴリー</th><td><%=foodBean.getCategoryName()%></td>
      </tr>
      <tr>
-       <th>・栄養素</th><td><%=fBean.getNutrientList()%></td>			<%--<input type="submit" value=" 登録 " /></td>--%>
+       <th>・栄養素</th><td><%=foodBean.getNutrientList()%></td>
      </tr>
      <br/>
      </table>
@@ -73,8 +65,8 @@
  %>
 
 	<p>
-	<input type="button" onclick="location.href='FoodEntry.jsp'" value="戻る" />
-	<input type="button" onclick="location.href='Entry.jsp'" value="キャンセル" />
+	<input type="button" onclick="location.href='FoodSearch.jsp'" value="戻る" />
+	<input type="button" onclick="location.href='Entry.jsp'" value="メニューへ" />
 	</p>
 	</div>
  </body>

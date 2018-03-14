@@ -20,7 +20,7 @@
  <script type="text/javascript">
    <!--
     function check(){
-	  if(document.foodsearch.foodname.value==""){
+	  if(document.foodsearch.food_name.value==""){
 		  window.confirm("全て表示しますか？");
 		  return false;
 	  }
@@ -29,18 +29,19 @@
    //-->
  </script>
 <%-- 上か下のチェックを行う   --%>
-<script type="text/javascript">
+<%--  <script type="text/javascript">
    <!--
     function check(){
-	  if(document.foodsearch.foodname.value==""){
+	  if(document.foodsearch.food_name.value==""){
 		  window.alert("食材を入力してください。");
 		  return false;
 	  }
 	  return true;
   }
+
    //-->
  </script>
-
+--%>
 
  </head>
  <body>
@@ -61,11 +62,11 @@
 
 	<hr/>
 
-		<form id="foodsearch" name="foodsearch" action="FoodSearchServlet"
+		<form id="foodsearch" name="foodsearch" action="FoodSearchService2"
 		method="post" onsubmit="return check();">
 
 		<table style="width:750px;" border="0" cellspacing="20">
-			<input type="text" name="foodname" size="20" />
+			<input type="text" name="food_name" size="20" />
 			<input type="submit" value="検索" />
 		</table>
 
