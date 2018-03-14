@@ -54,7 +54,7 @@ function input(){
 		if(obj.food_name.value.length < 1){
 			msg += "食材名は必須項目です。\n";
 		}
-		if(!obj.quantity.value.match(/^[0-9]+$/g)||obj.unit.value = ""){
+		if(!obj.quantity.value.match(/^[0-9]+$/g)||obj.unit.value == ""){
 			msg += "残量は必須項目です。\n"
 		}
 		if(!obj.expiration_date.value.match(/^[0-9]+$/g)){
