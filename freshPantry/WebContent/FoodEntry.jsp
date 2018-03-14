@@ -16,29 +16,7 @@
 <link rel="stylesheet" type="text/css" href="fpbase.css" />
 
 <script type="text/javascript">
-function add()
-{
-    var div_element = document.createElement("div");
-    div_element.innerHTML = '<table border="1">'
-     +'<tbody  id="histTablebody"><tr id="histrow1"><td id="num">1</td><td><input type="text" name="COMPANY_NAME1" id="txt"></td></tr></tbody></table>';
-    var parent_object = document.getElementById("piyo");
-    parent_object.appendChild(div_element);
-}
 var num = 1;
-function add2()
-
-{
-	num++;
-	var nutrientName = "nutrient"+num;
-	var nutrientNametxt = "nutrienttxt"+num;
-
-	var input = document.createElement("div");
-	input.setAttribute("type","text");
-	input.setAttribute("name",nutrientName);
-	input.setAttribute("id",nutrientNametxt);
-	parent_object.appendChild(input);
-}
-
 function input(){
 	num++;
 	var inputName = "num"+num;
@@ -46,10 +24,9 @@ function input(){
 	input.setAttribute("type","text");
 	input.setAttribute("name",inputName);
 	input.setAttribute("value",inputName);
-	document.getElementById("input").appendChild(input);
-
-	var br = document.createElement("p");
-	document.getElementById("p").appendChild(br);
+	document.getElementById("inputArea").appendChild(input);
+	var p = document.createElement("br");
+	document.getElementById("inputArea").appendChild(p);
 }
 </script>
 <script type="text/javascript">
@@ -159,8 +136,8 @@ int cnt = 1;
 
 </br>
 	<form action="FoodEntryService" method="post">
-		<td><input type="text" name="num1" value="v1">
-		<div id="input">
+		<td><input type="text" name="num1">
+		<div id="inputArea">
 		</div>
 		<input type="button" value="栄養素追加" onClick="input()">
 		<input type="reset" value="クリア" /></td>
