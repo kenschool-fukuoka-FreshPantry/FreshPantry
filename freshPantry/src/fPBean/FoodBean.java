@@ -314,7 +314,7 @@ public class FoodBean {
 						+ "un.unit_name AS unit_name"
 						+ " FROM FP_FOODMANAGE fm "
 						+ "INNER JOIN FP_UNIT un USING(unit) "
-						+ "INNER JOIN FP_CATEGORY ca USEING(category_id) "
+						+ "INNER JOIN FP_CATEGORY ca USING(category_id) "
 						+ " ORDER BY fm.food_name ASC ;"
 						;
 				rs = st.executeQuery(sql);
@@ -334,7 +334,7 @@ public class FoodBean {
 						+ "un.unit_name AS unit_name"
 						+ " FROM FP_FOODMANAGE fm "
 						+ "INNER JOIN FP_UNIT un USING(unit) "
-						+ "INNER JOIN FP_CATEGORY ca USEING(category_id) "
+						+ "INNER JOIN FP_CATEGORY ca USING(category_id) "
 						+ " WHERE fm.category_id = '" + categryId + "'"
 						+ " ORDER BY fm.food_name ASC ;"
 						;
