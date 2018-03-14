@@ -62,7 +62,7 @@
 
 	<hr/>
 
-		<form id="foodsearch" name="foodsearch" action="FoodSearchService2"
+		<form id="foodsearch" name="foodsearch" action="FoodSearchService"
 		method="post" onsubmit="return check();">
 
 		<table style="width:750px;" border="0" cellspacing="20">
