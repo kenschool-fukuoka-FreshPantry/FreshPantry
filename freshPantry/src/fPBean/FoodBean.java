@@ -239,9 +239,9 @@ public class FoodBean {
 						+ "un.unit_name AS unit_name,"
 						+ "fo.nutrient AS nutrient"
 						+ " FROM FP_FOODMANAGE fm "
-						+ "INNER JOIN FP_UNIT un USEING(unit) "
-						+ "INNER JOIN FP_CATEGORY ca USEING(category_id) "
-						+ "INNER JOIN FP_FOOD fo USEING(food_no) "
+						+ "INNER JOIN FP_UNIT un USING(unit) "
+						+ "INNER JOIN FP_CATEGORY ca USING(category_id) "
+						+ "INNER JOIN FP_FOOD fo USING(food_no) "
 						+ " WHERE fm.food_no = " + foodNo + ";"
 						;
 				rs = st.executeQuery(sql);
@@ -313,7 +313,7 @@ public class FoodBean {
 						+ "fm.unit AS unit,"
 						+ "un.unit_name AS unit_name"
 						+ " FROM FP_FOODMANAGE fm "
-						+ "INNER JOIN FP_UNIT un USEING(unit) "
+						+ "INNER JOIN FP_UNIT un USING(unit) "
 						+ "INNER JOIN FP_CATEGORY ca USEING(category_id) "
 						+ " ORDER BY fm.food_name ASC ;"
 						;
@@ -333,7 +333,7 @@ public class FoodBean {
 						+ "fm.unit AS unit,"
 						+ "un.unit_name AS unit_name"
 						+ " FROM FP_FOODMANAGE fm "
-						+ "INNER JOIN FP_UNIT un USEING(unit) "
+						+ "INNER JOIN FP_UNIT un USING(unit) "
 						+ "INNER JOIN FP_CATEGORY ca USEING(category_id) "
 						+ " WHERE fm.category_id = '" + categryId + "'"
 						+ " ORDER BY fm.food_name ASC ;"
@@ -390,7 +390,8 @@ public class FoodBean {
 		}
 		try{
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root","root");
-			sql = "SELECT * FROM FOODMANAGE WHERE like '%" + food_name + "%'";
+			sql = "SELECT * FROM FP_FOODMANAGE,CATEGORY,UNIT WHERE food_name like '%" + food_name + "%'"
+					+ " ORDER BY FP_FOODMANAGE.food_name ASC ;";
 			pst = con.prepareStatement(sql);
 			rs = pst.executeQuery();
 
@@ -407,6 +408,7 @@ public class FoodBean {
 				f.setCategoryId(rs.getString("category_id"));
 				f.setCategoryName(rs.getString("category_name"));
 				//f.setNutrientList(rs.getString("nutrient_list"));
+
 
 				resultFoodBean.add(f);
 			}
