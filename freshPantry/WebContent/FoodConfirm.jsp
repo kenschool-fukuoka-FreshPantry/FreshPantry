@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="fPBean.FoodBean"%>
+<%@page import="fPBean.FoodNutrientBean"%>
 <%
 	String no = (String)request.getAttribute("no");
 	String food_name = (String)request.getAttribute("food_name");
@@ -41,7 +42,16 @@
        <th align="left">・カテゴリー</th><td><%=fBean.getCategoryName()%></td>
      </tr>
      <tr>
-       <th align="left">・栄養素</th><td><%=fBean.getNutrientList()%></td>
+       <th align="left">・栄養素</th>
+       <%=fBean.getNutrientList()%>
+       <% for(FoodNutrientBean b : fBean.getNutrientList()){
+       %>
+
+       <td><%=b.getNutrient()%></td>
+       <%
+       }
+       %>
+       <td></td>
      </tr>
      </table>
 
