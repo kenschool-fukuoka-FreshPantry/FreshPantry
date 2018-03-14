@@ -61,7 +61,7 @@ function input(){
 			msg += "賞味期限は必須項目です。\n";
 		}
 		if(obj.ｃategory_id.value == ""){
-			msg += "カテゴリーは必須項目です。¥n";
+			msg += "カテゴリーは必須項目です。";
 		}
 
 		if(msg.length > 0){
