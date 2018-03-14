@@ -38,11 +38,11 @@ public class FoodSearchService extends HttpServlet {
 
 		//beanをインスタンス化、値のセット
 		FoodBean fb = new FoodBean();
-
+		
 		fb.getFoodData(food_name);
 
-		request.setAttribute("foodData", fb);
-
+		
+		request.setAttribute("resultList", resultFoodBean);
 
 		request.getRequestDispatcher("FoodData.jsp").forward(request, response);
 
