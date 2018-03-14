@@ -405,6 +405,11 @@ public class FoodBean {
 				f.setUnit(rs.getString("unit"));
 				f.setUnitName(rs.getString("unit_name"));
 				f.setExpirationDate(rs.getString("expiration_date"));
+
+					if(purchase_date = null){
+						purchase_date = "";
+					}
+
 				f.setPurchaseDate(rs.getString("purchase_date"));
 				f.setCategoryId(rs.getString("category_id"));
 				f.setCategoryName(rs.getString("category_name"));
