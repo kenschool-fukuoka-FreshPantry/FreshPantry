@@ -109,14 +109,14 @@ function input(){
  		<td><input type="text" name="purchase_date" size="25" /></td>
  	</tr>
  	<tr>
- 	<th align="left">　<font size="2">（例：20180316）</font></th>
+ 	<th align="left">　<font size="2">（入力例：20180316）</font></th>
  	</tr>
  	<tr>
  	<th align="left">・賞味期限（半角数字）<font color="red">（必須）</font></th>
  		<td><input type="text" name="expiration_date" size="25" /></td>
  	</tr>
  	<tr>
- 	<th align="left">　<font size="2">（例：20180316）</font></th>
+ 	<th align="left">　<font size="2">（入力例：20180316）</font></th>
  	</tr>
  	<tr>
  	<th align="left">・カテゴリー<font color="red">（必須）</font></th>
