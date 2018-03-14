@@ -49,7 +49,6 @@
      </tr>
      <tr>
        <th align="left">・栄養素</th>
-       <%=fBean.getNutrientList()%>
        <% for(FoodNutrientBean b : fBean.getNutrientList()){
        %>
 

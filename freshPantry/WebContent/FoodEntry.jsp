@@ -23,7 +23,6 @@ function input(){
 	var input = document.createElement("input");
 	input.setAttribute("type","text");
 	input.setAttribute("name",inputName);
-	input.setAttribute("value",inputName);
 	document.getElementById("inputArea").appendChild(input);
 	var p = document.createElement("br");
 	document.getElementById("inputArea").appendChild(p);
