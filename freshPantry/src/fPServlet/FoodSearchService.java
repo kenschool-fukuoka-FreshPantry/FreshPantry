@@ -1,6 +1,7 @@
 package fPServlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -38,10 +39,9 @@ public class FoodSearchService extends HttpServlet {
 
 		//beanをインスタンス化、値のセット
 		FoodBean fb = new FoodBean();
-		
-		fb.getFoodData(food_name);
 
-		
+		ArrayList<FoodBean>resultFoodBean = fb.getFoodData(food_name);
+
 		request.setAttribute("resultList", resultFoodBean);
 
 		request.getRequestDispatcher("FoodData.jsp").forward(request, response);
