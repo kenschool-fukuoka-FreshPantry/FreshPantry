@@ -26,7 +26,7 @@
 </head>
 <body>
 <div align="center">
-<font color="red" size="5">登録完了しました。</font></h1>
+<font color="red" size="6">登録完了しました。</font></h1>
 <h1><font color="orange">内容確認</font></h1>
 
 <br/>
