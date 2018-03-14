@@ -386,8 +386,10 @@ public class FoodBean {
 			sql = "SELECT * FROM FOODMANAGE WHERE like '%" + food_name + "%'";
 			pst = con.prepareStatement(sql);
 			rs = pst.executeQuery();
+
 			while(rs.next()){
 				FoodBean f = new FoodBean();
+
 				f.setFoodNo(Integer.parseInt(rs.getString("food_no")));
 				f.setFoodName(rs.getString("food_name"));
 				f.setQuantity(Integer.parseInt(rs.getString("quantity")));
