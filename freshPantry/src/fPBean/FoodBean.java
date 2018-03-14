@@ -180,7 +180,7 @@ public class FoodBean {
 						+ "nutrient,"
 						+ "registration_time,"
 						+ "update_time)"
-						+ "VALUES('"
+						+ "VALUES("
 						+ setFoodNo  + ","
 						+ i  + ",'"
 						+ fnBeanData.getNutrient()  + "',"

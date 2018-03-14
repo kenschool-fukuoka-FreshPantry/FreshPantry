@@ -69,7 +69,7 @@ public class FoodEntryService extends HttpServlet {
 			int i = 1;
 			boolean endFlg = false;
 			while(!endFlg){
-				String nutrientName = request.getParameter("nutrient"+i);
+				String nutrientName = request.getParameter("num"+i);
 
 				if(nutrientName == null){
 					// 枠がなくなったら、処理をやめる
