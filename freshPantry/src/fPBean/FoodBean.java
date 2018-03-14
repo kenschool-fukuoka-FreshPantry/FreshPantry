@@ -390,7 +390,7 @@ public class FoodBean {
 		}
 		try{
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root","root");
-			sql = "SELECT * FROM FP_FOODMANAGE INNER JOIN CATEGORY USING (category_id) INNER JOIN UNIT USING(unit)"
+			sql = "SELECT * FROM FP_FOODMANAGE INNER JOIN FP_CATEGORY USING (category_id) INNER JOIN FP_UNIT USING(unit)"
 					+ " WHERE food_name like '%" + food_name + "%'"
 					+ " ORDER BY FP_FOODMANAGE.food_name ASC ;";
 			pst = con.prepareStatement(sql);
