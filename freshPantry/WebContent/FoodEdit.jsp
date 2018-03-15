@@ -1,7 +1,8 @@
 <!--
 	@author 藤本
-	食材変更画面
 	@version 1.0
+	食材変更画面
+	未完成
  -->
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -42,6 +43,7 @@
 
 </head>
 <body>
+
 	<div align="center">
 
 	<h1><font color="blue">食材変更</font></h1>
@@ -55,6 +57,7 @@
 	   </th>
 	     <td>
 	<%--   <input type="text" name="food_name" value="<%=food_name%>" /> --%>
+
 	     </td>
 	 </tr>
 	 <tr>
@@ -62,8 +65,8 @@
 	     残量(半角数字) <font color="red">（必須）</font>
 	   </th>
 	     <td>
-	     <input type="text" name="quantity" value="<%=quantity%>" size="5" />
-	   	   <select name="unit" value="<%=unit_name%>">
+	     <input type="text" name="quantity" value="<%= %>" size="5" />
+	   	   <select name="unit" value="<%= %>">
         	 <option value="0">単位</option>		<%-- 消えるか、もしくはquantity --%>
         	 <option value="1">ｇ</option>
         	 <option value="2">個</option>			<%-- valueの値は変更するかも --%>
@@ -81,19 +84,19 @@
 	 <tr>
 	   <th align="left">購入日 (半角数字)
 	   </th>
-	    <td><input type="text" name="purchase_date" value="<%=purchase_date%>" size="25" />
+	    <td><input type="text" name="purchase_date" value="<%= %>" size="25" />
 	    </td>
 	  </tr>
 	  <tr>
 	    <th align="left">賞味期限 (半角数字) <font color="red">（必須）</font>
 	    </th>
-	      <td><input type="text" name="expiration_date" value="<%=expiration_date%>" size="25" />
+	      <td><input type="text" name="expiration_date" value="<%= %>" size="25" />
 	      </td>
 	  </tr>
 	    <th align="left">カテゴリー <font color="red">（必須）</font>
 	    </th>
 	      <td>
-	      <select name="category_id" value="<%=category_name%>" />
+	      <select name="category_id" value="<%= %>" />
 	   		<option value="0">選択してください</option>				<%-- 消えるか、もしくはcategory_name --%>
 			<option value="1">肉類</option>
          	<option value="2">魚介類</option>
@@ -113,6 +116,7 @@
 	<hr/>
 	<br/>
 	<input type="button" value="戻る" onclick="history.back()" />
+
   </div>
 </body>
 </html>

@@ -64,8 +64,9 @@
 	<hr/>
 <%
 			}
-		}
- %>
+	}
+%>
+		<h3><font color="blue">以上</font></h3>
 	<p>
 	<input type="button" onclick="location.href='FoodSearch.jsp'" value="戻る" />
 	</p>
