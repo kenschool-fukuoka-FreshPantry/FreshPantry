@@ -133,7 +133,7 @@ String name1 ="+1";
 int cnt = 1;
 %>
 
-</br>
+<br/>
 	<form action="FoodEntryService" method="post">
 		<td><input type="text" name="num1">
 		<div id="inputArea">
@@ -144,7 +144,7 @@ int cnt = 1;
  	</tr>
 </table>
  </form>
-</br></br>
+<br/><br/>
 	<p><input type="button" onClick="location.href='Entry.jsp'" value="戻る" />
 	 <button type=submit name ="buttonOn" value ="001">登録</button>
 

@@ -60,7 +60,7 @@
      </tr>
      </table>
 
-     </br></br>
+     <br/><br/>
 	<p><input type="button" onClick="location.href='Entry.jsp'" value="新規登録・変更・削除へ戻る" /></p>
 </form>
 </div>
