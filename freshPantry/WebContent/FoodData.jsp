@@ -1,7 +1,7 @@
 <!--
 	@author 藤本
 	@version 1.0
-	(庫内リスト)食材情報表示
+	(庫内リスト)食材情報表示画面
  -->
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -32,7 +32,7 @@
  <body>
 	<div align="center">
 
-	<h1><font color="pink">食材情報表示</font></h1>
+	<h1><font color="mediumseagreen">食材情報表示</font></h1>
 	<br/>
 	<hr/>
 
@@ -68,7 +68,6 @@
  %>
 	<p>
 	<input type="button" onclick="location.href='FoodSearch.jsp'" value="戻る" />
-	<input type="button" onclick="location.href='Entry.jsp'" value="メニューへ" />
 	</p>
 	</div>
  </body>

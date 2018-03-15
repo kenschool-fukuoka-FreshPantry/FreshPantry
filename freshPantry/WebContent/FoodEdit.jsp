@@ -54,7 +54,7 @@
 	   <th align="left">食材名<font color="red">（必須）</font>
 	   </th>
 	     <td>
-	     <input type="text" name="food_name" value="<%=food_name%>" />
+	<%--   <input type="text" name="food_name" value="<%=food_name%>" /> --%>
 	     </td>
 	 </tr>
 	 <tr>
