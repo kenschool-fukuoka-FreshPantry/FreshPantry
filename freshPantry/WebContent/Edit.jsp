@@ -1,7 +1,8 @@
 <!--
 	@author 藤本
-	登録内容変更・削除画面
 	@version 1.0
+	登録内容変更・削除画面
+	未完成
  -->
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -12,7 +13,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>	登録内容変更・削除</title>
-
+  <link rel="stylesheet" type="text/css" href="fpbase.css" />
 
 
 </head>

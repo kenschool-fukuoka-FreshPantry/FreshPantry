@@ -23,16 +23,12 @@
  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>食材情報表示</title>
   <link rel="stylesheet" type="text/css" href="fpbase.css" />
-  <style>
-    th {align:left;}
-
-  </style>
 
  </head>
  <body>
 	<div align="center">
 
-	<h1><font color="mediumseagreen">食材情報表示</font></h1>
+	<h1><font color="mediumseagreen">食材情報</font></h1>
 	<br/>
 	<hr/>
 

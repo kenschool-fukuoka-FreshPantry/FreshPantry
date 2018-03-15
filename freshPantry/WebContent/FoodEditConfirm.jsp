@@ -1,7 +1,8 @@
 <!--
 	@author 藤本
-	変更内容確認画面
 	@version 1.0
+	変更内容確認画面
+	未完成
  -->
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -18,7 +19,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>変更内容確認</title>
-
+  <link rel="stylesheet" type="text/css" href="fpbase.css" />
 
 
 </head>
